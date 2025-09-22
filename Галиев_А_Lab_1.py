@@ -56,7 +56,10 @@ def bayesian_probability(a: float, ba: float) -> float:
     if pb == 0:
         return 0
     return (a * ba) / pb
- """
+    raise ValueError("Недостаточно данных: для P(A|B) нужно знать P(B) или P(B|¬A).")
+
+
+"""
 #Для проверки работоспособности кода
 
 import webbrowser
