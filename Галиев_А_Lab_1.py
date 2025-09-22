@@ -57,7 +57,11 @@ def bayesian_probability(a: float, ba: float) -> float:
         return 0
     return (a * ba) / pb
  """
-Для проверки работоспособности кода
+#Для проверки работоспособности кода
+
+import webbrowser
+import random
+
 if __name__ == "__main__":
     # Проверка simple_probability
     print("simple_probability(2, 4) =", simple_probability(2, 4))  # 0.5
@@ -81,4 +85,11 @@ if __name__ == "__main__":
     # Проверка bayesian_probability
     print("bayesian_probability(0.5, 0.8) =", bayesian_probability(0.5, 0.8))  
     # P(A)=0.5, P(B|A)=0.8 → ~0.8
+
+
+    # Небольшая пасхалка
+    if random.random() < 0.3:  # 30% шанс
+        print("😏 У тебя редкий бонус! Проверим твою удачу...")
+        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
  """
