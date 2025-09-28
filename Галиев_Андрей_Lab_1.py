@@ -1,4 +1,3 @@
-# Galiev_A_lab_1.py
 
 def simple_probability(m: int, n: int) -> float:
     """Простая вероятность: m / n"""
@@ -45,16 +44,17 @@ def conditional_probability(values: tuple) -> float:
     return count_a1b1 / count_a1
 
 
-def bayesian_probability(a: float, ba: float) -> float:
+def bayesian_probability(a: float, b: float, ba: float) -> float:
     """
-    Теорема Байеса.
-    На вход: P(A) = a, P(B|A) = ba.
-    Предположим P(B) = a*ba + (1-a)*(1-ba)  (если других данных нет).
-    Возвращает P(A|B).
+    Теорема Байеса:
+        P(A|B) = P(B|A) * P(A) / P(B)
+    Параметры:
+        a  = P(A)
+        b  = P(B)
+        ba = P(B|A)
+    Если b == 0 — возвращает 0.0.
     """
-    pb = a * ba + (1 - a) * (1 - ba)
-    if pb == 0:
-        return 0
-    return (a * ba) / pb
-    raise ValueError("Недостаточно данных: для P(A|B) нужно знать P(B) или P(B|¬A).")
+    if b == 0.0:
+        return 0.0
+    return (ba * a) / b
 
